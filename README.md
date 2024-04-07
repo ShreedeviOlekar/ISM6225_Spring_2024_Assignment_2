@@ -1,5 +1,5 @@
 # ISM6225_Spring_2024_Assignment_2
-![Screenshot 2024-04-07 161527](https://github.com/ShreedeviOlekar/ISM6225_Spring_2024_Assignment_2/assets/145629094/73768052-6d46-4295-a820-0ce8908808e3)
-![image](https://github.com/ShreedeviOlekar/ISM6225_Spring_2024_Assignment_2/assets/145629094/80e638a7-4d4a-4a78-81e0-ef0dfbf7e4eb)
-![image](https://github.com/ShreedeviOlekar/ISM6225_Spring_2024_Assignment_2/assets/145629094/43774ea6-5472-4107-b1af-b811d93d2ba8)
+![Screenshot 2024-04-07 161527](https://github.com/ShreedeviOlekar/ISM6225_Spring_2024_Assignment_2/assets/145629094/56b9017f-86cf-4bce-9f97-ff6eee00ab1a)
+![Screenshot 2024-04-07 161604](https://github.com/ShreedeviOlekar/ISM6225_Spring_2024_Assignment_2/assets/145629094/3bf3ce10-7d95-49a9-86c7-558c25c196c2)
+
 
