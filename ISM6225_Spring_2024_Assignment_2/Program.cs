@@ -1,5 +1,5 @@
 ﻿/* 
- 
+
 YOU ARE NOT ALLOWED TO MODIFY ANY FUNCTION DEFINIDTION's PROVIDED.
 WRITE YOUR CODE IN THE RESPECTIVE QUESTION FUNCTION BLOCK
 
@@ -53,15 +53,15 @@ namespace ISM6225_Spring_2024_Assignment_2
 
             //Question 6:
             Console.WriteLine("Question 6:");
-            int[] nums5 = { 3,6,9,1 };
+            int[] nums5 = { 3, 6, 9, 1 };
             int maxGap = MaximumGap(nums5);
-            
+
             Console.WriteLine(maxGap);
             Console.ReadLine();
 
             //Question 7:
             Console.WriteLine("Question 7:");
-            int[] nums6 = { 2,1,2 };
+            int[] nums6 = { 2, 1, 2 };
             int largestPerimeterResult = LargestPerimeter(nums6);
             Console.WriteLine(largestPerimeterResult);
             Console.ReadLine();
@@ -105,29 +105,29 @@ namespace ISM6225_Spring_2024_Assignment_2
         nums is sorted in non-decreasing order.
         */
 
-       public static int RemoveDuplicates(int[] nums)
-{
-    try
-    {
-        if (nums.Length == 0)
-            return 0;
-
-        int ind = 0;
-        for (int i = 1; i < nums.Length; i++)// i starts from 1 as we compare it from the 2nd index to the precious index
+        public static int RemoveDuplicates(int[] nums)
         {
-            if (nums[i] != nums[ind])//comparing i and i-1 th index
+            try
             {
-                ind++;
-                nums[ind] = nums[i];
+                if (nums.Length == 0)
+                    return 0;
+
+                int ind = 0;
+                for (int i = 1; i < nums.Length; i++)// i starts from 1 as we compare it from the 2nd index to the precious index
+                {
+                    if (nums[i] != nums[ind])//comparing i and i-1 th index
+                    {
+                        ind++;
+                        nums[ind] = nums[i];
+                    }
+                }
+                return ind + 1;
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
-        return ind + 1;
-    }
-    catch (Exception)
-    {
-        throw;
-    }
-}
 
 
         /*
@@ -155,24 +155,30 @@ namespace ISM6225_Spring_2024_Assignment_2
 
         public static IList<int> MoveZeroes(int[] nums)
         {
-            int count = 0;
-           
-            for (int i = 0; i < nums.Length; i++) 
+            try
             {
-                // if the index value of i is not equal to 0 then add 
-                if (nums[i] != 0)
-                {
-                    nums[count++] = nums[i];
-                }
-            }
-            // add 0 until the count = nums.Length
-            while (count < nums.Length)
-            {
-                nums[count++] = 0;
-            }
+                int count = 0;
 
-            IList<int> result = new List<int>(nums);
-            return result;
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    if (nums[i] != 0)
+                    {
+                        nums[count++] = nums[i];
+                    }
+                }
+
+                while (count < nums.Length)
+                {
+                    nums[count++] = 0;
+                }
+
+                IList<int> result = new List<int>(nums);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
 
@@ -504,7 +510,7 @@ namespace ISM6225_Spring_2024_Assignment_2
 
         */
 
-        
+
 
         public static string RemoveOccurrences(string s, string part)
         {
