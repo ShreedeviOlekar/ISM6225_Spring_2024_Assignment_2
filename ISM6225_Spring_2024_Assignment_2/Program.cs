@@ -157,26 +157,31 @@ namespace ISM6225_Spring_2024_Assignment_2
         {
             try
             {
-                int count = 0;
+                int count = 0;  // Initialize a counter for non-zero elements
 
+                // Iterating through the array
                 for (int i = 0; i < nums.Length; i++)
                 {
+                    // If the current element is not zero, move it to the front of the array
                     if (nums[i] != 0)
                     {
                         nums[count++] = nums[i];
                     }
                 }
 
+                // Fill the remaining elements with zeros
                 while (count < nums.Length)
                 {
                     nums[count++] = 0;
                 }
 
+                // Create a list from the modified array and return it
                 IList<int> result = new List<int>(nums);
                 return result;
             }
             catch (Exception)
             {
+             
                 throw;
             }
         }
@@ -224,34 +229,50 @@ namespace ISM6225_Spring_2024_Assignment_2
         {
             try
             {
+                // Sort the input array
                 Array.Sort(nums);
+
+                // Initialize a list to store the resulting triplets
                 IList<IList<int>> result = new List<IList<int>>();
 
+                // Iterate through the sorted array
                 for (int i = 0; i < nums.Length - 2; i++)
                 {
+                    // Skip duplicates
                     if (i > 0 && nums[i] == nums[i - 1])
                         continue;
 
+                    // Set left and right pointers
                     int l = i + 1;
                     int r = nums.Length - 1;
 
+                    // Iterate through the array with two pointers
                     while (l < r)
                     {
+                        // Calculate the sum of three elements
                         int sum = nums[i] + nums[l] + nums[r];
+
+                        // If the sum is zero, add the triplet to the result list
                         if (sum == 0)
                         {
                             result.Add(new List<int> { nums[i], nums[l], nums[r] });
+
+                            // Skip duplicates
                             while (l < r && nums[l] == nums[l + 1])
                                 l++;
                             while (l < r && nums[r] == nums[r - 1])
                                 r--;
+
+                            // Move the pointers
                             l++;
                             r--;
                         }
+                        // If the sum is less than zero, move the left pointer
                         else if (sum < 0)
                         {
                             l++;
                         }
+                        // If the sum is greater than zero, move the right pointer
                         else
                         {
                             r--;
@@ -259,10 +280,12 @@ namespace ISM6225_Spring_2024_Assignment_2
                     }
                 }
 
+                // Return the list of triplets
                 return result;
             }
             catch (Exception)
             {
+               
                 throw;
             }
         }
@@ -360,7 +383,7 @@ namespace ISM6225_Spring_2024_Assignment_2
                     bin /= 10;
 
                     decimalNumber += lastDigit * baseVal;
-                    baseVal *= 2;
+                    baseVal *= 2;// increase the value of base by multiplying 2 i.e 2*n
                 }
 
                 return decimalNumber;
@@ -450,20 +473,26 @@ namespace ISM6225_Spring_2024_Assignment_2
         {
             try
             {
+                // Sort the input array in descending order 
                 Array.Sort(nums, (a, b) => b - a);
 
+                // Iterate over the array to find the largest perimeter
                 for (int i = 0; i < nums.Length - 2; i++)
                 {
+                    // Check if the current triplet can form a valid triangle 
                     if (nums[i] < nums[i + 1] + nums[i + 2])
                     {
+                        // If the condition is met, return the sum of the three sides, which represents the largest perimeter
                         return nums[i] + nums[i + 1] + nums[i + 2];
                     }
                 }
 
+                // If no valid triangle can be formed, return 0
                 return 0;
             }
             catch (Exception)
             {
+                
                 throw;
             }
         }
@@ -519,10 +548,12 @@ namespace ISM6225_Spring_2024_Assignment_2
                 //using string builder we are modify the string numerous times and we can use the function Remove
                 StringBuilder sb = new StringBuilder(s);
                 int index;
+                // if there is a abc(part) in string then returns 0 else returns -1
                 while ((index = sb.ToString().IndexOf(part)) != -1)
                 {
                     sb.Remove(index, part.Length);
                 }
+                //converting StringBuilder to string
                 return sb.ToString();
             }
             catch (Exception)
