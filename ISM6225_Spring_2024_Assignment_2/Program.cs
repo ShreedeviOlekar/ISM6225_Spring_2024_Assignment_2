@@ -175,9 +175,9 @@ namespace ISM6225_Spring_2024_Assignment_2
                 IList<int> result = new List<int>(nums);
                 return result;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
 
